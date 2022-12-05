@@ -3,7 +3,9 @@ const httpServer = require("http").createServer();
 var osc = require("node-osc");
 const io = require("socket.io")({
   cors: {
-    origin: "http://127.0.0.1:5500",
+    origin: "*",
+    // origin: "http://127.0.0.1:10001",
+    origin: "http://127.0.0.1:10001",
     methods: ["GET", "POST"],
   },
 }).listen(8081);

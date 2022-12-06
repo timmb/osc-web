@@ -25,7 +25,7 @@ io.on("connection", function (socket) {
 
     oscServer.on("message", function (msg, rinfo) {
       socket.emit("message", msg);
-      console.log("sent OSC message to WS", msg, rinfo);
+      // console.log("sent OSC message to WS", msg, rinfo);
     });
   });
 
@@ -33,7 +33,7 @@ io.on("connection", function (socket) {
     var toSend = obj.split(" ");
 
     oscClient.send(...toSend);
-    console.log("sent WS message to OSC", toSend);
+    // console.log("sent WS message to OSC", toSend);
   });
   socket.on("disconnect", function () {
     oscServer.kill();
